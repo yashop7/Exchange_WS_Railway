@@ -12,6 +12,7 @@ const wss = new WebSocketServer({ server });  // Attach WebSocket to HTTP server
 
 // HTTP endpoints
 app.get("/health", (_req, res) => {
+    console.log("Health check - server is alive from the HTTP");
     res.send("Hello World");
 });
 
@@ -23,7 +24,6 @@ wss.on("connection", (ws: WebSocket) => {
 
 // Start server (handles both HTTP and WebSocket)
 server.listen(PORT, () => {
-    console.log("Health check - server is alive from the HTTP");
     console.log(`Server running on port ${PORT}`);
 });
 

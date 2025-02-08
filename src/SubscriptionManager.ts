@@ -118,7 +118,7 @@ export class SubscriptionManager {
    * Called when a user disconnects; remove all subscriptions for that user.
    */
   public userLeft(userId: string) {
-    console.log("User left:", userId);
+    console.log("User left:");
     this.subscriptions.get(userId)?.forEach((s) => this.unsubscribe(userId, s));
   }
 
